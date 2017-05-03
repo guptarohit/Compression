@@ -23,7 +23,7 @@ def UnComp():
 	uncompress=open("uncompress.txt","w")
 	for i in x:
 		answer+=alphabets[int(i,2)-1]
-		uncompress.write(answer)
-
+	uncompress.write(answer)	
+UnComp()
 file.write(compressedString)
 file.close()
