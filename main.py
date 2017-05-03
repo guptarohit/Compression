@@ -17,4 +17,4 @@ print("compressedString",x)
 answer=" "
 for i in x:
 	answer+=alphabets[int(i,2)-1]
-	print(answer)	
+print(answer)		
