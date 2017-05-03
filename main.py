@@ -7,7 +7,7 @@ import string
 alphabets=list(string.ascii_lowercase)
 String=input("Input String: ")
 compressedString=' '
-file=open("compress.txt","r")
+file=open("compress.txt","w")
 
 for i in range(len(String)):
 	for y in range(len(alphabets)):
@@ -16,12 +16,14 @@ for i in range(len(String)):
 		
 	
 
-x=compressedString.split()			
+x=compressedString.split()	
 print("compressedString",x)			
-answer=" "
-uncompress=open("uncompress.txt","w")
-for i in x:
-	answer+=alphabets[int(i,2)-1]
-	uncompress.write(answer)
+def UnComp():
+	answer=" "
+	uncompress=open("uncompress.txt","w")
+	for i in x:
+		answer+=alphabets[int(i,2)-1]
+		uncompress.write(answer)
+
 file.write(compressedString)
 file.close()
