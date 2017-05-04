@@ -1,29 +1,33 @@
 #!/usr/bin/env python3
 """
-This is a compresser 
+This is a compressor 
 
 """
 import string
-alphabets=list(string.printable)
-String=input("Input String: ")
-compressedString=' '
-file=open("compress.txt","w")
 
-for i in range(len(String)):
-	for y in range(len(alphabets)):
-		if alphabets[y]==String[i]:
-			compressedString+=bin(y+1)[2:]+" "
-		
-	
+alphabets = list(string.printable)
+input_string = input("Input String: ")
+compressed_string = ''
+file = open("compress.txt", "w")
 
-x=compressedString.split()	
-print("compressedString",x)			
+for char in input_string:
+    if char in alphabets:
+        compressed_string += bin(alphabets.index(char) + 1)[2:] + " "
+
+x = compressed_string.split()
+
+print("Compressed string: ", x)
+
+
 def UnComp():
-	answer=" "
-	uncompress=open("uncompress.txt","w")
-	for i in x:
-		answer+=alphabets[int(i,2)-1]
-	uncompress.write(answer)	
+    original_string = ''
+    uncompress = open("uncompress.txt", "w")
+    for i in x:
+        original_string += alphabets[int(i, 2) - 1]
+    uncompress.write(original_string)
+
+
 UnComp()
-file.write(compressedString)
+
+file.write(compressed_string)
 file.close()
