@@ -4,7 +4,7 @@ This is a compresser
 
 """
 import string
-alphabets=list(string.ascii_lowercase)
+alphabets=list(string.printable)
 String=input("Input String: ")
 compressedString=' '
 file=open("compress.txt","w")
